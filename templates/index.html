@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Adicionar item</title>
+    <style>
+      /* Define as cores para o tema escuro */
+      body {
+        background-color: #333;
+        color: #fff;
+      }
+      
+      /* Estilo para o formulário */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+      
+      /* Estilo para o label */
+      label {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      /* Estilo para o input */
+      input {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        width: 300px;
+        font-size: 18px;
+      }
+      
+      /* Estilo para o botão */
+      button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #1a1a1a;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      
+      /* Estilo para o botão quando o mouse estiver sobre ele */
+      button:hover {
+        background-color: #333;
+      }
+      
+      /* Centraliza o texto */
+      h1 {
+        text-align: center;
+      }
+
+      /* Define uma fonte personalizada para todo o documento */
+      @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+      /* Aplica a fonte personalizada ao corpo do documento */
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Adicionar item</h1>
+    <form action="/add" method="post">
+      <label for="item">Item:</label>
+      <input type="text" id="item" name="item" required>
+      <button type="submit">Adicionar</button>
+      <button type="button" onclick="window.location.href='/view'">View</button>
+    </form>
+    
+    <script>
+      // Altera o tema escuro para o tema claro e vice-versa
+      const body = document.querySelector('body');
+      const buttons = document.querySelectorAll('button');
+      
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          if (body.classList.contains('dark-theme')) {
+            body.classList.remove('dark-theme');
+          } else {
+            body.classList.add('dark-theme');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
